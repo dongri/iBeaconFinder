@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="
+Beacon情報\n
+UUID:\n
+Beaconのproximity UUIDを格納するプロパティ\n
+major:\n
+Beaconのmajorを格納するプロパティ\n
+minor:\n
+Beaconのminorを格納するプロパティ\n
+\n
+Beacon距離\n
+proximity:\n
+Beaconの相対距離の情報を格納するプロパティ\n
+accuracy:\n
+Beaconのメータ(m)で測られた距離を格納するプロパティ\n
+rssi:\n
+Beaconの電波強度を格納するプロパティ
+\n\n
+Dongri Jin\n
+http://github.com/dongri"
+        android:autoLink="web"
+        />
+</LinearLayout>

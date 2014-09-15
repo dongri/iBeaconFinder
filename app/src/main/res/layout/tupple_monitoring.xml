@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:paddingBottom="10dip"
+    android:paddingTop="10dip">
+
+    <TextView
+        android:id="@+id/BEACON_uuid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|top"
+        android:layout_marginLeft="10dip"
+        android:text="UUID">
+    </TextView>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip">
+
+        <TextView
+            android:id="@+id/BEACON_major"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dip"
+            android:gravity="left|top"
+            android:text="major">
+        </TextView>
+
+        <TextView
+            android:id="@+id/BEACON_minor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dip"
+            android:gravity="left|top"
+            android:text="minor">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip">
+
+        <TextView
+            android:id="@+id/BEACON_proximity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dip"
+            android:gravity="left|top"
+            android:text="proximity">
+        </TextView>
+
+        <TextView
+            android:id="@+id/BEACON_rssi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dip"
+            android:gravity="left|top"
+            android:text="rssi">
+        </TextView>
+
+        <TextView
+            android:id="@+id/BEACON_txpower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dip"
+            android:gravity="left|top"
+            android:text="txpower">
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/BEACON_range"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dip"
+        android:gravity="left|top"
+        android:text="range">
+    </TextView>
+
+</LinearLayout>

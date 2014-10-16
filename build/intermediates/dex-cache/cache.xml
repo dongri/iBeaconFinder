@@ -6,13 +6,7 @@
         jar="/Users/dongri/Dropbox (Personal)/Developers/android/iBeaconFinder/app/build/intermediates/exploded-aar/iBeaconFinder.libraries/android-ibeacon-service/adhoc/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="38a72d5147a8f1cef01261c6061cf8cf961510e1"/>
-    <item
-        dex="/Users/dongri/Dropbox (Personal)/Developers/android/iBeaconFinder/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-6b8f637237327559570e01834650ed1caf3cecc8.jar"
-        jar="/Users/dongri/Dropbox (Personal)/Developers/android/iBeaconFinder/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+        sha1="ba94546347b470be5da11c60e05b983caee33543"/>
     <item
         dex="/Users/dongri/Dropbox (Personal)/Developers/android/iBeaconFinder/app/build/intermediates/pre-dexed/debug/classes-7b84a83b8d56d7a0f98282f61191729d2860e5f7.jar"
         jar="/Users/dongri/Dropbox (Personal)/Developers/android/iBeaconFinder/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
@@ -25,5 +19,11 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="/Users/dongri/Dropbox (Personal)/Developers/android/iBeaconFinder/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-6b8f637237327559570e01834650ed1caf3cecc8.jar"
+        jar="/Users/dongri/Dropbox (Personal)/Developers/android/iBeaconFinder/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
 
 </pre-dex-items>

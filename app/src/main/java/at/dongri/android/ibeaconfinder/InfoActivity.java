@@ -1,7 +1,9 @@
-package io.dongri.android.ibeaconfinder;
+package at.dongri.android.ibeaconfinder;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import at.dongri.android.ibeaconfinder.R;
 
 /**
  * Created by dongri on 3/9/14.

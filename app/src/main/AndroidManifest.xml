@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.dongri.android.ibeaconfinder" >
+    package="at.dongri.android.ibeaconfinder" >
 
     <uses-sdk
         android:minSdkVersion="18"
@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppThemeLight">
         <activity
-            android:name="io.dongri.android.ibeaconfinder.MainActivity"
+            android:name="at.dongri.android.ibeaconfinder.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name="io.dongri.android.ibeaconfinder.InfoActivity"
+            android:name="at.dongri.android.ibeaconfinder.InfoActivity"
             android:label="@string/app_name" >
         </activity>
 

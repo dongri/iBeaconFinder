@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="io.dongri.android.ibeaconfinder.MainActivity" >
+    tools:context="at.dongri.android.ibeaconfinder.MainActivity" >
 
     <item android:id="@+id/action_scan"
         android:title="@string/scan"

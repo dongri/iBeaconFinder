@@ -1,4 +1,4 @@
-package io.dongri.android.ibeaconfinder;
+package at.dongri.android.ibeaconfinder;
 
 /**
  * Created by dongri on 2/23/14.
@@ -12,15 +12,15 @@ import com.radiusnetworks.ibeacon.Region;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +32,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+import at.dongri.android.ibeaconfinder.R;
 
 /**
  *
@@ -103,18 +105,21 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     private void verifyBluetooth() {
         try {
             if (!IBeaconManager.getInstanceForApplication(this).checkAvailability()) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Bluetooth not enabled");
-                builder.setMessage("Please enable bluetooth in settings and restart this application.");
-                builder.setPositiveButton(android.R.string.ok, null);
-                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        finish();
-                        System.exit(0);
-                    }
-                });
-                builder.show();
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 0);
+
+//                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//                builder.setTitle("Bluetooth not enabled");
+//                builder.setMessage("Please enable bluetooth in settings and restart this application.");
+//                builder.setPositiveButton(android.R.string.ok, null);
+//                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+//                    @Override
+//                    public void onDismiss(DialogInterface dialog) {
+//                        finish();
+//                        System.exit(0);
+//                    }
+//                });
+//                builder.show();
             }
         }
         catch (RuntimeException e) {
@@ -132,7 +137,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
             });
             builder.show();
-
         }
 
     }

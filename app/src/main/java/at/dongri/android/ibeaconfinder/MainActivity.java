@@ -252,7 +252,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
                 holder.beacon_txpower.setText(" TxPower: " + arrayL.get(position).getTxPower());
 
-                holder.beacon_range.setText("Accuracy: " + arrayL.get(position).getAccuracy());
+                double accuracy = arrayL.get(position).getAccuracy();
+                if (accuracy < 0){
+                    accuracy = 0;
+                }
+                holder.beacon_range.setText("Accuracy: " + accuracy);
 
             } catch (Exception e) {
                 e.printStackTrace();

@@ -1,3 +1,2 @@
 include ':app'
-include ':libraries:android-ibeacon-service'
 

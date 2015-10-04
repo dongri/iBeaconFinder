@@ -3,17 +3,10 @@ package at.dongri.android.ibeaconfinder;
 /**
  * Created by dongri on 2/23/14.
  */
-import com.radiusnetworks.ibeacon.IBeacon;
-import com.radiusnetworks.ibeacon.IBeaconConsumer;
-import com.radiusnetworks.ibeacon.IBeaconManager;
-import com.radiusnetworks.ibeacon.MonitorNotifier;
-import com.radiusnetworks.ibeacon.RangeNotifier;
-import com.radiusnetworks.ibeacon.Region;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,23 +22,57 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.altbeacon.beacon.Beacon;
+import org.altbeacon.beacon.BeaconConsumer;
+import org.altbeacon.beacon.BeaconManager;
+import org.altbeacon.beacon.BeaconParser;
+import org.altbeacon.beacon.MonitorNotifier;
+import org.altbeacon.beacon.RangeNotifier;
+import org.altbeacon.beacon.Region;
+
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import at.dongri.android.ibeaconfinder.R;
 
 /**
  *
  * Created by Dongri on 2/23/14.
  *
  */
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener, IBeaconConsumer  {
-    protected static final String TAG = "MonitoringActivity";
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener, BeaconConsumer {
+
+    private BeaconManager iBeaconManager;
+
     private ListView list = null;
     private BeaconAdapter adapter = null;
-    private ArrayList<IBeacon> arrayL = new ArrayList<IBeacon>();
+    private ArrayList<Beacon> arrayL = new ArrayList<Beacon>();
     private LayoutInflater inflater;
+
+    private Intent service = null;
+
+    public static final String IBEACON_FORMAT = "m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_monitoring);
+        verifyBluetooth();
+
+        list = (ListView) findViewById(R.id.list);
+        adapter = new BeaconAdapter();
+        list.setAdapter(adapter);
+        inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        iBeaconManager = BeaconManager.getInstanceForApplication(this);
+
+        iBeaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout(IBEACON_FORMAT));
+
+        service = new Intent(MainActivity.this, BeaconService.class);
+        startService(service);
+        Toast.makeText(this, "Start Background Service", Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,7 +86,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         switch (item.getItemId()){
             case R.id.action_scan:
                 if (iBeaconManager.isBound(this)) {
-                    iBeaconManager.unBind(this);
+                    iBeaconManager.unbind(this);
                     item.setTitle("Scan");
                     arrayL.clear();
                     adapter.notifyDataSetChanged();
@@ -71,15 +98,16 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             case R.id.action_info:
                 startActivity(new Intent(getBaseContext(), InfoActivity.class));
                 return true;
+            case R.id.action_background:
+                stopService(service);
+                Toast.makeText(this, "Stop Background Service", Toast.LENGTH_SHORT).show();
+                return true;
         }
         return false;
     }
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // When the given tab is selected, switch to the corresponding page in
-        // the ViewPager.
-        //mViewPager.setCurrentItem(tab.getPosition());
     }
 
     @Override
@@ -90,36 +118,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_monitoring);
-        verifyBluetooth();
-
-        list = (ListView) findViewById(R.id.list);
-        adapter = new BeaconAdapter();
-        list.setAdapter(adapter);
-        inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-
     private void verifyBluetooth() {
         try {
-            if (!IBeaconManager.getInstanceForApplication(this).checkAvailability()) {
+            if (!iBeaconManager.getInstanceForApplication(this).checkAvailability()) {
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableBtIntent, 0);
-
-//                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//                builder.setTitle("Bluetooth not enabled");
-//                builder.setMessage("Please enable bluetooth in settings and restart this application.");
-//                builder.setPositiveButton(android.R.string.ok, null);
-//                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//                    @Override
-//                    public void onDismiss(DialogInterface dialog) {
-//                        finish();
-//                        System.exit(0);
-//                    }
-//                });
-//                builder.show();
             }
         }
         catch (RuntimeException e) {
@@ -141,22 +144,21 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     }
 
-    private IBeaconManager iBeaconManager = IBeaconManager.getInstanceForApplication(this);
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        iBeaconManager.unBind(this);
+        iBeaconManager.unbind(this);
     }
     @Override
     protected void onPause() {
         super.onPause();
-        if (iBeaconManager.isBound(this)) iBeaconManager.setBackgroundMode(this, true);
+        if (iBeaconManager.isBound(this)) iBeaconManager.setBackgroundMode(true);
     }
     @Override
     protected void onResume() {
         super.onResume();
-        if (iBeaconManager.isBound(this)) iBeaconManager.setBackgroundMode(this, false);
+        if (iBeaconManager.isBound(this)) iBeaconManager.setBackgroundMode(false);
     }
 
     private void logToDisplay(final String line) {
@@ -166,14 +168,15 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         });
     }
     @Override
-    public void onIBeaconServiceConnect() {
+    public void onBeaconServiceConnect() {
+
         iBeaconManager.setRangeNotifier(new RangeNotifier() {
             @Override
-            public void didRangeBeaconsInRegion(final Collection<IBeacon> iBeacons, Region region) {
+            public void didRangeBeaconsInRegion(final Collection<Beacon> iBeacons, Region region) {
                 runOnUiThread(new Runnable() {
                     public void run() {
                         arrayL.clear();
-                        arrayL.addAll((ArrayList<IBeacon>) iBeacons);
+                        arrayL.addAll((ArrayList<Beacon>) iBeacons);
                         adapter.notifyDataSetChanged();
                     }
                 });
@@ -220,7 +223,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         }
 
         @Override
-        public IBeacon getItem(int arg0) {
+        public Beacon getItem(int arg0) {
             return arrayL.get(arg0);
         }
 
@@ -239,24 +242,18 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 } else {
                     holder = new ViewHolder(convertView = inflater.inflate(R.layout.tupple_monitoring, null));
                 }
-                if (arrayL.get(position).getProximityUuid() != null)
-                    holder.beacon_uuid.setText("UUID: " + arrayL.get(position).getProximityUuid().toUpperCase());
+                holder.beacon_uuid.setText("UUID: " + arrayL.get(position).getId1().toString().toUpperCase());
 
-                holder.beacon_major.setText("Major: " + arrayL.get(position).getMajor());
+                holder.beacon_major.setText("Major: " + arrayL.get(position).getId2());
 
-                holder.beacon_minor.setText(" Minor: " + arrayL.get(position).getMinor());
+                holder.beacon_minor.setText(" Minor: " + arrayL.get(position).getId3());
 
-                holder.beacon_proximity.setText("Proximity: " + arrayL.get(position).getProximity());
+                double proximity = arrayL.get(position).getDistance();
+                holder.beacon_proximity.setText("Proximity: " + (new BigDecimal(proximity).setScale(5, BigDecimal.ROUND_HALF_UP).doubleValue()));
 
                 holder.beacon_rssi.setText(" Rssi: " + arrayL.get(position).getRssi());
 
                 holder.beacon_txpower.setText(" TxPower: " + arrayL.get(position).getTxPower());
-
-                double accuracy = arrayL.get(position).getAccuracy();
-                if (accuracy < 0){
-                    accuracy = 0;
-                }
-                holder.beacon_range.setText("Accuracy: " + accuracy);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -272,7 +269,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             private TextView beacon_proximity;
             private TextView beacon_rssi;
             private TextView beacon_txpower;
-            private TextView beacon_range;
 
             public ViewHolder(View view) {
                 beacon_uuid = (TextView) view.findViewById(R.id.BEACON_uuid);
@@ -281,7 +277,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 beacon_proximity = (TextView) view.findViewById(R.id.BEACON_proximity);
                 beacon_rssi = (TextView) view.findViewById(R.id.BEACON_rssi);
                 beacon_txpower = (TextView) view.findViewById(R.id.BEACON_txpower);
-                beacon_range = (TextView) view.findViewById(R.id.BEACON_range);
 
                 view.setTag(this);
             }

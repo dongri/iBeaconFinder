@@ -19,13 +19,11 @@ Beaconのminorを格納するプロパティ\n
 Beacon距離\n
 proximity:\n
 Beaconの相対距離の情報を格納するプロパティ\n
-accuracy:\n
-Beaconのメータ(m)で測られた距離を格納するプロパティ\n
 rssi:\n
 Beaconの電波強度を格納するプロパティ
 \n\n
 Dongri Jin\n
-http://github.com/dongri"
+https://github.com/dongri/iBeaconFinder"
         android:autoLink="web"
         />
 </LinearLayout>

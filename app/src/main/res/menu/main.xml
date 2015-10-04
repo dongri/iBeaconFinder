@@ -10,4 +10,9 @@
         android:title="@string/action_info"
         android:orderInCategory="100"
         android:showAsAction="never" />
+    <item android:id="@+id/action_background"
+        android:title="@string/action_background"
+        android:orderInCategory="101"
+        android:showAsAction="never" />
+
 </menu>

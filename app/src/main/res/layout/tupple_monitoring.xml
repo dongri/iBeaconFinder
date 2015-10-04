@@ -83,14 +83,4 @@
         </TextView>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/BEACON_range"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dip"
-        android:gravity="left|top"
-        android:text="range">
-    </TextView>
-
 </LinearLayout>

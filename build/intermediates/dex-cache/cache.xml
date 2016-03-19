@@ -2,11 +2,60 @@
 <items version="2" >
 
     <item
-        jar="/Users/dongri/Dropbox (Personal)/developers/android/Project/iBeaconFinder/app/build/intermediates/exploded-aar/org.altbeacon/android-beacon-library/2.6.1/jars/classes.jar"
+        jar="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
         jumboMode="false"
-        revision="19.1.0"
-        sha1="6d3728cf62d53de7395707c000051735ea8c298c">
-        <dex dex="/Users/dongri/Dropbox (Personal)/developers/android/Project/iBeaconFinder/app/build/intermediates/pre-dexed/debug/classes-e9e0cad2cf32cefd5be5de4a4ba69aa25f2f4e94.jar" />
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/classes-4a25d8fe41ad9d57fe8bb550674329ae5c870856.jar" />
+    </item>
+    <item
+        jar="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/classes-e897ed2ccdc2bc9cee48a3ff45568b8b0352b090.jar" />
+    </item>
+    <item
+        jar="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/exploded-aar/com.google.android.support/wearable/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="58b928ccbaf9090c632f278d6bd31e1ae42f2457">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/classes-d61c6894f25cd8e79069ced37935d33fc9ac256d.jar" />
+    </item>
+    <item
+        jar="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c6d79137693d494dee16372d3921f919eb724ced">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/classes-fd4cad1b2ccf5ab73530d4d1eaf47cf12f0de15b.jar" />
+    </item>
+    <item
+        jar="/Users/kaoriikada/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-23e9255ab65b9f0ac3b65ab4d9a15ab750099d69.jar" />
+    </item>
+    <item
+        jar="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-942313ea085b39fa7da9724933fba1cd701ccb6c.jar" />
+    </item>
+    <item
+        jar="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/classes-4513103412d8dc19d8523621c498f12b98c359da.jar" />
+    </item>
+    <item
+        jar="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="/Users/kaoriikada/study/iBeaconFinder/wear/build/intermediates/pre-dexed/debug/classes-21facd942f1a3df65ce3176c887c32d31b70376c.jar" />
     </item>
 
 </items>

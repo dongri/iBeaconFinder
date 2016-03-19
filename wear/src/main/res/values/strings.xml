@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">wear</string>
+    <string name="app_name">iBeacon Finder</string>
     <string name="hello_world">Hello Dongri!</string>
+    <string name="scaninng">Scanning...</string>
 </resources>

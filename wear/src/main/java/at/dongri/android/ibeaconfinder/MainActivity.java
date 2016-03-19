@@ -106,7 +106,7 @@ public class MainActivity extends WearableActivity implements BeaconConsumer {
                 if (collection.size() > 0) {
                     for (Iterator iterator = collection.iterator(); iterator.hasNext(); ) {
                         Beacon beacon = (Beacon) iterator.next();
-                        String beaconStr = "uuid" + beacon.getId1().toString() +
+                        String beaconStr = "uuid:" + beacon.getId1().toString() +
                                            ", major:" + beacon.getId2().toString() +
                                            ", minor:" + beacon.getId3().toString() +
                                            ", Distance:" + beacon.getDistance() +

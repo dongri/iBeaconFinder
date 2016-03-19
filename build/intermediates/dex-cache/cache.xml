@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/dongri/Dropbox (Personal)/developers/android/Project/iBeaconFinder/app/build/intermediates/exploded-aar/org.altbeacon/android-beacon-library/2.6.1/jars/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="6d3728cf62d53de7395707c000051735ea8c298c">
+        <dex dex="/Users/dongri/Dropbox (Personal)/developers/android/Project/iBeaconFinder/app/build/intermediates/pre-dexed/debug/classes-e9e0cad2cf32cefd5be5de4a4ba69aa25f2f4e94.jar" />
+    </item>
+
+</items>

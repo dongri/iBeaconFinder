@@ -4,6 +4,6 @@
     <string name="app_name">iBeacon Finder</string>
     <string name="scan">Scan</string>
     <string name="action_info">Info</string>
-    <string name="action_background">Stop Background</string>
+    <string name="action_background">Start Background</string>
 
 </resources>

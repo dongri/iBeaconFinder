@@ -70,8 +70,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         iBeaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout(IBEACON_FORMAT));
 
         service = new Intent(MainActivity.this, BeaconService.class);
-        startService(service);
-        Toast.makeText(this, "Start Background Service", Toast.LENGTH_SHORT).show();
+        //startService(service);
+        //Toast.makeText(this, "Start Background Service", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -99,8 +99,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 startActivity(new Intent(getBaseContext(), InfoActivity.class));
                 return true;
             case R.id.action_background:
-                stopService(service);
-                Toast.makeText(this, "Stop Background Service", Toast.LENGTH_SHORT).show();
+                startService(service);
+                Toast.makeText(this, "Start Background Service", Toast.LENGTH_SHORT).show();
                 return true;
         }
         return false;

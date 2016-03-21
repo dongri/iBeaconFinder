@@ -2,11 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/dongri/Dropbox (Personal)/developers/android/Project/iBeaconFinder/app/build/intermediates/exploded-aar/org.altbeacon/android-beacon-library/2.6.1/jars/classes.jar"
+        jar="/Users/dongri/Dropbox (Personal)/dev/android/Project/iBeaconFinder/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/jars/libs/internal_impl-20.0.0.jar"
         jumboMode="false"
-        revision="19.1.0"
-        sha1="6d3728cf62d53de7395707c000051735ea8c298c">
-        <dex dex="/Users/dongri/Dropbox (Personal)/developers/android/Project/iBeaconFinder/app/build/intermediates/pre-dexed/debug/classes-e9e0cad2cf32cefd5be5de4a4ba69aa25f2f4e94.jar" />
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/Users/dongri/Dropbox (Personal)/dev/android/Project/iBeaconFinder/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0_aaf76ad5e2505a2038f7fa06447fe092affe66a4.jar" />
+    </item>
+    <item
+        jar="/Users/dongri/Dropbox (Personal)/dev/android/Project/iBeaconFinder/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/Users/dongri/Dropbox (Personal)/dev/android/Project/iBeaconFinder/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-20.0.0_2286c3e3cc0c3b8ad07df39c4017fa0e59f8745d.jar" />
+    </item>
+    <item
+        jar="/Users/dongri/Dropbox (Personal)/dev/android/Project/iBeaconFinder/app/build/intermediates/exploded-aar/org.altbeacon/android-beacon-library/2.7.1/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="cf8e282e7c1cdf175467ed2b40a358a271cda953">
+        <dex dex="/Users/dongri/Dropbox (Personal)/dev/android/Project/iBeaconFinder/app/build/intermediates/pre-dexed/debug/org.altbeacon-android-beacon-library-2.7.1_ed5119522111b457595ee5ce9365a8033d3e2e91.jar" />
+    </item>
+    <item
+        jar="/Users/dongri/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="/Users/dongri/Dropbox (Personal)/dev/android/Project/iBeaconFinder/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0_483de1c5c3aafbf90dc84ee35ba111c9347211ee.jar" />
     </item>
 
 </items>
